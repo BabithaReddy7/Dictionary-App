@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import Axios from "axios";
 import "./App.css";
 import { FaSearch } from "react-icons/fa";
-import { FcSpeaker } from "react-icons/fc";
+
 
 function App() {
   // Setting up the initial states using react hook 'useState'
@@ -20,19 +20,15 @@ function App() {
     });
   }
 
-  // Function to play and listen the 
-  // phonetics of the searched word
-  function playAudio() {
-    let audio = new Audio(data.phonetics[0].audio);
-    audio.play();
-  }
+  
+  
 
   return (
     <div className="App">
       <h1>Free Dictionary</h1>
       <div className="searchBox">
 
-        // Taking user input
+       
         <input
           type="text"
           placeholder="Search..."
@@ -52,13 +48,7 @@ function App() {
         <div className="showResults">
           <h2>
             {data.word}{" "}
-            <button
-              onClick={() => {
-                playAudio();
-              }}
-            >
-              <FcSpeaker size="26px" />
-            </button>
+            
           </h2>
           <h4>Parts of speech:</h4>
 
